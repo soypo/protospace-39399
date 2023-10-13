@@ -7,12 +7,16 @@
 | name               | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
+| profile            | text   | null: false |
+| occupation         | text   | null: false |
+| position           | text   | null: false |
+
 
 ### Association
 
-- has_many :room_users
-- has_many :rooms, through: :room_users
-- has_many :messages
+- has_many :prototypes
+- has_many :comments
+- has_many :comments, dependent: :destroy
 
 ## rooms テーブル
 
